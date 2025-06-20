@@ -1,38 +1,128 @@
-.App {
+.guess-game-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.guess-form {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover:not([disabled]) {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.result {
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.result.too-high {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.result.too-low {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.result.correct {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.attempts-display {
+  margin: 10px 0;
+  font-size: 18px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.play-again-button {
+  display: block;
+  margin: 20px auto;
+  background-color: #2196F3;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.play-again-button:hover {
+  background-color: #0b7dda;
+}
+
+.history-container {
+  margin-top: 20px;
+}
+
+.history-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.history-item {
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 4px;
+}
+
+.history-item.too-high {
+  background-color: #ffcdd2;
+}
+
+.history-item.too-low {
+  background-color: #bbdefb;
+}
+
+.history-item.correct {
+  background-color: #c8e6c9;
+}
+
+.error-message {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+@media (max-width: 480px) {
+  .guess-form {
+    flex-direction: column;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  
+  input[type="number"] {
+    width: 100%;
   }
 }
